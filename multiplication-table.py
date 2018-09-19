@@ -1,7 +1,10 @@
 """
 multiplication-table.py
-Author: <your name here>
-Credit: <list sources used, if any>
+Author: Pierre Mayo
+Credit: Stack Overflow on how to properly format a table in Python 3.0: 
+
+https://stackoverflow.com/questions/20415384/properly-formatted-multiplication-table
+
 Assignment:
 
 Write and submit a Python program that prints a multiplication table. The user 
@@ -21,3 +24,8 @@ Height of multiplication table: 8
   7  14  21  28  35  42  49  56  63  70
   8  16  24  32  40  48  56  64  72  80
 """
+
+width = int(input("Width of multiplication table: "))
+height = int(input("Height of multiplication table: "))
+for row in range(1, height+1):
+    print(*("{:3}".format(row*col) for col in range(1, width+1)))
